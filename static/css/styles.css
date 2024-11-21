@@ -42,6 +42,7 @@ header h1 {
 }
 
 .form-container, .canvas-wrapper {
+    margin-top: 30px;
     background-color: white;
     padding: 30px;
     border-radius: 8px;
@@ -124,13 +125,27 @@ header h1 {
 /* Canvas Wrapper */
 .canvas-wrapper {
     text-align: center;
+    margin-top: 20px;
 }
 
-#cardCanvas {
+.canvas-wrapper canvas {
     border: 1px solid #ddd;
     border-radius: 8px;
     max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
+}
+
+/* Adjust headings in the canvas-wrapper */
+.canvas-wrapper h2 {
+    margin-top: 40px;
+}
+
+#frontCanvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 #downloadButton {
@@ -173,7 +188,7 @@ footer a:hover {
     }
 
     .container {
-        margin: 20px auto;
+        margin: 20px 20px;
     }
 
     .form-container h2, .canvas-wrapper h2 {
