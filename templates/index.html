@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardify - Create Your Custom Campus Card</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Customize Your Campus Card</h1>
+        <form action="/create_card" method="POST" enctype="multipart/form-data">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="staff_id">Staff ID:</label>
+            <input type="text" id="staff_id" name="staff_id" required>
+
+            <label for="bg_image">Upload Background Image:</label>
+            <input type="file" id="bg_image" name="bg_image" accept="image/*" required>
+
+            <button type="submit">Create Card</button>
+        </form>
+    </div>
+</body>
+</html>
