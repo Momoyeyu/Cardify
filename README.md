@@ -50,7 +50,6 @@
    git clone https://github.com/yourusername/cardify.git
    cd cardify
    ```
-
 2. **Create a Virtual Environment**
 
    It's recommended to use a virtual environment to manage dependencies.
@@ -59,13 +58,11 @@
    python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
-
 3. **Install Dependencies**
 
    ```bash
    pip install -r requirements.txt
    ```
-
 4. **Add School Logo**
 
    Ensure you have a `school_logo.png` image placed in the `static/images/` directory.
@@ -82,11 +79,9 @@
    ```bash
    python app.py
    ```
-
 2. **Access the Application**
 
    Open your web browser and navigate to `http://127.0.0.1:5000`.
-
 3. **Create Your Campus Card**
 
    - Fill in your **Name** and **Staff ID**.
@@ -144,25 +139,21 @@ cardify/
 Contributions are welcome! Please follow these steps:
 
 1. **Fork the Repository**
-
 2. **Create a New Branch**
 
    ```bash
    git checkout -b feature/YourFeature
    ```
-
 3. **Commit Your Changes**
 
    ```bash
    git commit -m "Add your feature"
    ```
-
 4. **Push to the Branch**
 
    ```bash
    git push origin feature/YourFeature
    ```
-
 5. **Open a Pull Request**
 
 ## License
@@ -175,3 +166,5 @@ For any questions or suggestions, feel free to reach out:
 
 - **Email**: [sujunjie@bupt.edu.cn](mailto:sujunjie@bupt.edu.cn)
 - **GitHub**: [Momoyeyu](https://github.com/Momoyeyu)
+
+Developed by **Junjie Su** as part of the "Web Development" course homework at Beijing University of Posts and Telecommunications.
