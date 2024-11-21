@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
         bgImage.src = bgImageUrl;
 
         // Add timestamp to logo URL to avoid 304 caching issues
-        logo.src = '/static/images/school_logo.png?' + (new Date().getTime() + 100);
+        logo.src = '/static/images/school_logo.png?' + (new Date().getTime() + 50);
 
         bgImage.onload = function () {
             // Clear the canvas
