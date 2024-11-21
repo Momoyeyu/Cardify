@@ -1,51 +1,162 @@
-/* styles.css */
+/* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body and Basic Layout */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f2f2f2, #cce7ff);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
-.container {
-    width: 80%;
+/* Header */
+header {
+    width: 100%;
+    background-color: #4CAF50;
+    padding: 10px 0;
+}
+
+header .toolbar {
+    max-width: 1200px;
     margin: 0 auto;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Main Content */
+.container {
+    flex: 1;
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.form-container, .canvas-wrapper {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.card-form input[type="text"],
+.card-form input[type="file"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.card-form input[type="text"]:focus,
+.card-form input[type="file"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* Canvas Styling */
+.canvas-wrapper {
+    position: relative;
+}
+
+canvas {
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+#downloadButton {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+#downloadButton:hover {
+    background-color: #45a049;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
     padding: 20px;
 }
 
-h1 {
-    text-align: center;
+footer a {
     color: #4CAF50;
+    text-decoration: none;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    max-width: 400px;
-    margin: 0 auto;
+footer a:hover {
+    text-decoration: underline;
 }
 
-input[type="text"],
-input[type="file"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+    .container {
+        margin: 20px auto;
+    }
 
-button:hover {
-    background-color: #45a049;
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .submit-button, #downloadButton {
+        width: 100%;
+        font-size: 1rem;
+    }
 }

@@ -17,7 +17,7 @@
     <div class="container">
         <div class="form-container">
             <h2>Customize Your Campus Card</h2>
-            <form id="cardForm" enctype="multipart/form-data">
+            <form action="{{ url_for('create_card') }}" method="POST" enctype="multipart/form-data" class="card-form">
                 <label for="name">Your Name:</label>
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
 
@@ -30,13 +30,6 @@
                 <button type="submit" class="submit-button">Create My Card</button>
             </form>
         </div>
-
-        <!-- Card Preview Section -->
-        <div class="canvas-wrapper" id="cardSection" style="display: none;">
-            <h2>Preview Your Campus Card</h2>
-            <canvas id="cardCanvas" width="800" height="500"></canvas>
-            <button id="downloadButton">Download Your Card</button>
-        </div>
     </div>
 
     <!-- Footer -->
@@ -44,8 +37,5 @@
         <p>&copy; 2024 Cardify | All rights reserved</p>
         <p>Contact us: <a href="mailto:support@cardify.com">support@cardify.com</a></p>
     </footer>
-
-    <!-- JavaScript -->
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
