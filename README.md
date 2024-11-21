@@ -174,9 +174,4 @@ This project is licensed under the [MIT License](LICENSE).
 For any questions or suggestions, feel free to reach out:
 
 - **Email**: [sujunjie@bupt.edu.cn](mailto:sujunjie@bupt.edu.cn)
-- **GitHub**: [yourusername](https://github.com/Momoyeyu)
-
-
----
-
-*Ensure to replace placeholders like `yourusername`, `path/to/front-side-screenshot.png`, and other relevant links with your actual information before publishing the project.*
+- **GitHub**: [Momoyeyu](https://github.com/Momoyeyu)
