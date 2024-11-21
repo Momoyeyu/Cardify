@@ -24,8 +24,11 @@
                 <label for="staff_id">Staff ID:</label>
                 <input type="text" id="staff_id" name="staff_id" placeholder="Enter your staff ID" required>
 
-                <label for="bg_image">Upload Background Image:</label>
+                <label for="bg_image" id="bgImageLabel" class="upload-label">Choose Background Image</label>
                 <input type="file" id="bg_image" name="bg_image" accept="image/*" required>
+
+                <label for="photo" id="photoLabel" class="upload-label">Choose Your Photo</label>
+                <input type="file" id="photo" name="photo" accept="image/*" required>
 
                 <button type="submit" class="submit-button">Create My Card</button>
             </form>

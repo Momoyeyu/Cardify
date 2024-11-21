@@ -44,31 +44,33 @@ header h1 {
 .form-container, .canvas-wrapper {
     background-color: white;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    font-size: 1.5rem;
-    color: #333;
+.form-container h2, .canvas-wrapper h2 {
+    font-size: 1.6rem;
     margin-bottom: 20px;
 }
 
-.card-form {
+.form-container form {
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.card-form label {
+.form-container label {
+    width: 100%;
+    max-width: 400px;
+    text-align: left;
+    margin-bottom: 5px;
     font-size: 1rem;
     color: #333;
-    margin-bottom: 5px;
-    text-align: left;
 }
 
-.card-form input[type="text"],
-.card-form input[type="file"] {
+.form-container input[type="text"] {
+    width: 100%;
+    max-width: 400px;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ddd;
@@ -76,21 +78,42 @@ h2 {
     font-size: 1rem;
 }
 
-.card-form input[type="text"]:focus,
-.card-form input[type="file"]:focus {
+.form-container input[type="text"]:focus {
     border-color: #4CAF50;
     outline: none;
 }
 
+.upload-label {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    color: #555;
+    border-radius: 5px;
+}
+
+.upload-label:hover {
+    background-color: #ddd;
+}
+
+.form-container input[type="file"] {
+    display: none;
+}
+
 .submit-button {
+    margin-top: 10px;
+    padding: 12px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 1.2rem;
     cursor: pointer;
     border-radius: 8px;
-    margin-top: 10px;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
 
@@ -98,25 +121,27 @@ h2 {
     background-color: #45a049;
 }
 
-/* Canvas Styling */
+/* Canvas Wrapper */
 .canvas-wrapper {
-    position: relative;
+    text-align: center;
 }
 
-canvas {
-    border-radius: 10px;
+#cardCanvas {
     border: 1px solid #ddd;
-    margin-bottom: 20px;
+    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
 }
 
 #downloadButton {
+    margin-top: 20px;
+    padding: 12px 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 12px 20px;
-    font-size: 1.2rem;
     cursor: pointer;
     border-radius: 8px;
+    font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
 
@@ -151,8 +176,8 @@ footer a:hover {
         margin: 20px auto;
     }
 
-    h2 {
-        font-size: 1.2rem;
+    .form-container h2, .canvas-wrapper h2 {
+        font-size: 1.4rem;
     }
 
     .submit-button, #downloadButton {

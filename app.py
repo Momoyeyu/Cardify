@@ -25,22 +25,31 @@ def create_card():
     name = request.form.get('name')
     staff_id = request.form.get('staff_id')
     bg_image = request.files.get('bg_image')
+    photo = request.files.get('photo')
 
-    if not (name and staff_id and bg_image):
+    if not (name and staff_id and bg_image and photo):
         return jsonify({'error': 'Missing input'}), 400
 
     if bg_image and allowed_file(bg_image.filename):
-        filename = secure_filename(bg_image.filename)
-        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        bg_image.save(image_path)
+        bg_filename = secure_filename(bg_image.filename)
+        bg_image_path = os.path.join(app.config['UPLOAD_FOLDER'], bg_filename)
+        bg_image.save(bg_image_path)
     else:
-        return jsonify({'error': 'Invalid file type'}), 400
+        return jsonify({'error': 'Invalid background image file type'}), 400
+
+    if photo and allowed_file(photo.filename):
+        photo_filename = secure_filename(photo.filename)
+        photo_image_path = os.path.join(app.config['UPLOAD_FOLDER'], photo_filename)
+        photo.save(photo_image_path)
+    else:
+        return jsonify({'error': 'Invalid photo file type'}), 400
 
     # Return JSON data to be handled by JavaScript
     return jsonify({
         'name': name,
         'staff_id': staff_id,
-        'bg_image': f'/static/images/uploads/{filename}'
+        'bg_image': f'/static/images/uploads/{bg_filename}',
+        'photo': f'/static/images/uploads/{photo_filename}'
     })
 
 if __name__ == '__main__':
