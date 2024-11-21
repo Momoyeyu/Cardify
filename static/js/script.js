@@ -60,26 +60,21 @@ document.addEventListener('DOMContentLoaded', function () {
             ctx.fillStyle = 'rgba(0, 0, 0, 0.4)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            // Draw the school logo and name at the top-right
+            // Draw the school logo at the top-right with constrained height
             logo.onload = function () {
-                ctx.drawImage(logo, canvas.width - 150, 20, 100, 100);
-                ctx.fillStyle = 'white';
-                ctx.font = 'bold 20px Arial';
-                ctx.fillText('My School', canvas.width - 150, 140);
+                const logoHeight = 100; // Adjust this value to change logo height
+                const logoWidth = (logo.width / logo.height) * logoHeight; // Maintain aspect ratio
+                ctx.drawImage(logo, canvas.width - logoWidth - 20, 20, logoWidth, logoHeight); // Align to top-right corner
             };
 
-            // Draw the user's photo
+            // Draw the user's photo with 16:9 aspect ratio
             photoImage.onload = function () {
-                const photoSize = 150;
-                const photoX = 50;
-                const photoY = (canvas.height - photoSize) / 2;
+                const photoWidth = 200; // Width of the photo (20)
+                const photoHeight = (photoWidth * 4) / 3; // Height based on 4:3 aspect ratio
+                const photoX = 75;
+                const photoY = (canvas.height - photoHeight) / 2; // Vertically center the photo
 
-                ctx.save();
-                ctx.beginPath();
-                ctx.arc(photoX + photoSize / 2, photoY + photoSize / 2, photoSize / 2, 0, Math.PI * 2);
-                ctx.clip();
-                ctx.drawImage(photoImage, photoX, photoY, photoSize, photoSize);
-                ctx.restore();
+                ctx.drawImage(photoImage, photoX, photoY, photoWidth, photoHeight);
 
                 // Set text styles for name and staff ID
                 ctx.fillStyle = 'white';
